@@ -1,3 +1,50 @@
+// TEST CASE 1
+// Description: Adding 1 + 2 = 3
+// 1.) Click on the number one button
+// EXPECTATION: Show 1 in the display
+// ACTUAL: ???
+
+Const Calculator = document.querySelector(.Calculator);
+Const Keys = document.querySelector(.CalculatorKeys);
+let one = 1;
+
+
+console.log(displayNumberButton);
+
+// 2.) Click on the plus button
+// EXPECTATION: Nothing. (Still showing 1 in the display)
+// ACTUAL: ???
+// 3.) Click on the number two button
+// EXPECTATION: Show 2 in the display
+// ACTUAL: ???
+// 4.) Click on the equals button
+// EXPECTATION: Show 3 in the display
+// ACTUAL: ???
+
+// TEST CASE 2
+// Description: Adding 11 + 22 = 33
+1.) Click on the number one button
+EXPECTATION: Show 1 in the display
+ACTUAL: ???
+2.) Click on the number one button
+EXPECTATION: Show 11 in the display
+ACTUAL: ???
+3.) Click on the plus button
+EXPECTATION: Nothing. (Still showing 11 in the display)
+ACTUAL: ???
+4.) Click on the number two button
+EXPECTATION: Show 2 in the display
+ACTUAL: ???
+5.) Click on the number two button
+EXPECTATION: Show 22 in the display
+ACTUAL: ???
+6.) Click on the equals button
+EXPECTATION: Show 33 in the display
+ACTUAL: ???
+
+
+
+
 // create interface - display, number keys, decimal key, clearEverything key, equals key, operator keys.
 
 //display should be set to 0.

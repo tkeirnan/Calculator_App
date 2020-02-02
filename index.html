@@ -22,57 +22,61 @@
           <h2>&nbsp;</h2>
       </div>
 
-      <div class="container text-center">
-            <div class ="row">
-                <div class="col"></div>
-                <div class="col"></div>
-                
-                <div class="col" id="buttonAndDisplay">
-                    <div class="row">
-                        <div><button id="ACbutton" data-action="clear">AC</button>
-                        </div>
-                        <div class="calculatorDisplay">0
+      <div id="Calculator" class="container text-center">
+            <div id="CalculatorDisplay"> 
+                <div class ="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col" id="buttonAndDisplay">
+                        <div class="row">
+                            <div><button id="ACbutton" data-action="clear">AC</button>
+                            </div>
+                            <p id="calculatorDisplay">0
+                            </p>
                         </div>
                     </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
                 </div>
-                
-                <div class="col"></div>
-                <div class="col"></div>
             </div>
-            <div>
+
+            <div id="CalculatorKeys">
                 <div class="row">
                     <div class="col">
-                        <button>1</button>
+                        <button type="button"
+                        onclick="document.getElementById('calculatorDisplay').innerHTML = 1">1</button>
                         <button>2</button>
                         <button>3</button>
                         <button class="key--operator" data-action="divide">÷</button>
                     </div>  
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button class="key--operator" data-action="multiply">&times;</button>
+                <div class="row">
+                    <div class="col">
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button class="key--operator" data-action="multiply">&times;</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button class="key--operator" data-action="subtract">-</button>
+                <div class="row">
+                    <div class="col">
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button class="key--operator" data-action="subtract">-</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button>0</button>
-                    <button data-action="decimal">.</button>
-                    <button class="key--equal" data-action="calculate">=</button>
-                    <button class="key--operator" data-action="add">+</button>
+                <div class="row">
+                    <div class="col">
+                        <button>0</button>
+                        <button data-action="decimal">.</button>
+                        <button class="key--equal" data-action="calculate">=</button>
+                        <button type="button"
+                        onclick="document.getElementById('calculatorDisplay').innerHTML = 1" 
+                        class="key--operator" data-action="add">+</button>
+                    </div>
                 </div>
-            </div>
+            </div>    
       </div>
   
 
