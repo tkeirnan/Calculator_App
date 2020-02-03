@@ -10,7 +10,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
       crossorigin="anonymous">
-      <link rel="stylesheet" href="calculator2.css">
+      <link rel="stylesheet" href="calculator.css">
 
 </head>
 <body>
@@ -23,7 +23,7 @@
       </div>
 
       <div id="Calculator" class="container text-center">
-            <div id="CalculatorDisplay"> 
+            <div> 
                 <div class ="row">
                     <div class="col"></div>
                     <div class="col"></div>
@@ -43,18 +43,17 @@
             <div id="CalculatorKeys">
                 <div class="row">
                     <div class="col">
-                        <button type="button"
-                        onclick="document.getElementById('calculatorDisplay').innerHTML = 1">1</button>
-                        <button>2</button>
-                        <button>3</button>
+                        <button id="one">1</button>
+                        <button id="two">2</button>
+                        <button id="three">3</button>
                         <button class="key--operator" data-action="divide">÷</button>
                     </div>  
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
+                        <button id="four">4</button>
+                        <button id="five">5</button>
+                        <button id="six">6</button>
                         <button class="key--operator" data-action="multiply">&times;</button>
                     </div>
                 </div>
@@ -71,9 +70,7 @@
                         <button>0</button>
                         <button data-action="decimal">.</button>
                         <button class="key--equal" data-action="calculate">=</button>
-                        <button type="button"
-                        onclick="document.getElementById('calculatorDisplay').innerHTML = 1" 
-                        class="key--operator" data-action="add">+</button>
+                        <button id="plusSign" class="key--operator" data-action="add">+</button>
                     </div>
                 </div>
             </div>    

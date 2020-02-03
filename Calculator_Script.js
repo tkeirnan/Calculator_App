@@ -4,12 +4,31 @@
 // EXPECTATION: Show 1 in the display
 // ACTUAL: ???
 
-Const Calculator = document.querySelector(.Calculator);
-Const Keys = document.querySelector(.CalculatorKeys);
-let one = 1;
+
+document.getElementById('one').addEventListener("click", function(){document.getElementById('calculatorDisplay').innerHTML = 1,
+localStorage.setItem('firstNumber', 1)});
+document.getElementById('two').addEventListener("click", function(){document.getElementById('calculatorDisplay').innerHTML = 2,
+localStorage.setItem('secondNumber', 2)});
+
+var savedFirstNumber = localStorage.getItem('firstNumber');
+let parsedSavedFirstNumber = parseInt(savedFirstNumber);
+var savedSecondNumber = localStorage.getItem('secondNumber');
+let parsedSavedSecondNumber = parseInt(savedSecondNumber);
+var savedOperator = localStorage.getItem('operator');
 
 
-console.log(displayNumberButton);
+document.getElementById('plusSign').addEventListener("click",localStorage.setItem('operator','+'));
+console.log(parsedSavedFirstNumber + savedOperator + parsedSavedSecondNumber);
+console.log(savedSecondNumber);
+
+// 1. press 1 button
+//  2. show 1 in display
+//  3. save the number 1 for later
+//  4. press the + button
+//  5. save the + symbol for later
+//  6. press 2
+//  7. show 2 in display
+//  8. save the number 2 for late
 
 // 2.) Click on the plus button
 // EXPECTATION: Nothing. (Still showing 1 in the display)
@@ -23,24 +42,24 @@ console.log(displayNumberButton);
 
 // TEST CASE 2
 // Description: Adding 11 + 22 = 33
-1.) Click on the number one button
-EXPECTATION: Show 1 in the display
-ACTUAL: ???
-2.) Click on the number one button
-EXPECTATION: Show 11 in the display
-ACTUAL: ???
-3.) Click on the plus button
-EXPECTATION: Nothing. (Still showing 11 in the display)
-ACTUAL: ???
-4.) Click on the number two button
-EXPECTATION: Show 2 in the display
-ACTUAL: ???
-5.) Click on the number two button
-EXPECTATION: Show 22 in the display
-ACTUAL: ???
-6.) Click on the equals button
-EXPECTATION: Show 33 in the display
-ACTUAL: ???
+// 1.) Click on the number one button
+// EXPECTATION: Show 1 in the display
+// ACTUAL: ???
+// 2.) Click on the number one button
+// EXPECTATION: Show 11 in the display
+// ACTUAL: ???
+// 3.) Click on the plus button
+// EXPECTATION: Nothing. (Still showing 11 in the display)
+// ACTUAL: ???
+// 4.) Click on the number two button
+// EXPECTATION: Show 2 in the display
+// ACTUAL: ???
+// 5.) Click on the number two button
+// EXPECTATION: Show 22 in the display
+// ACTUAL: ???
+// 6.) Click on the equals button
+// EXPECTATION: Show 33 in the display
+// ACTUAL: ???
 
 
 
