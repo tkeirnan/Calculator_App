@@ -1,25 +1,57 @@
+
+let savedFirstNumber;
+
+document.getElementById("one").addEventListener("click", function(){
+     document.getElementById("calculatorDisplay").innerText = document.getElementById("one").value;
+});
+
+
+
 // TEST CASE 1
 // Description: Adding 1 + 2 = 3
 // 1.) Click on the number one button
 // EXPECTATION: Show 1 in the display
 // ACTUAL: ???
 
+// let savedFirstNumber;
 
-document.getElementById('one').addEventListener("click", function(){document.getElementById('calculatorDisplay').innerHTML = 1,
-localStorage.setItem('firstNumber', 1)});
-document.getElementById('two').addEventListener("click", function(){document.getElementById('calculatorDisplay').innerHTML = 2,
-localStorage.setItem('secondNumber', 2)});
+// document.getElementById("one").addEventListener("click", function(){
+//     document.getElementById("calculatorDisplay").innerText = 1;
+//     savedFirstNumber = 1;
+// });
 
-var savedFirstNumber = localStorage.getItem('firstNumber');
-let parsedSavedFirstNumber = parseInt(savedFirstNumber);
-var savedSecondNumber = localStorage.getItem('secondNumber');
-let parsedSavedSecondNumber = parseInt(savedSecondNumber);
-var savedOperator = localStorage.getItem('operator');
+// console.log(savedFirstNumber);
+
+// const firstPlayer = document.getElementById('select-player');
+// let player = null;
+
+// firstPlayer.addEventListener("change", e => {
+//     player = e.targe.id;
+// });
+
+// console.log(savedFirstNumber);
+// let parsedSavedFirstNumber = parseInt(savedFirstNumber);
+
+// console.log(parsedSavedFirstNumber);
+
+// let savedSecondNumber;
+
+// document.getElementById('two').addEventListener("click", function(){
+//     document.getElementById('calculatorDisplay').innerHTML = 2,
+//     savedSecondNumber = 2;
+// });
+
+// let savedOperator;
 
 
-document.getElementById('plusSign').addEventListener("click",localStorage.setItem('operator','+'));
-console.log(parsedSavedFirstNumber + savedOperator + parsedSavedSecondNumber);
-console.log(savedSecondNumber);
+// let parsedSavedSecondNumber = parseInt(savedSecondNumber);
+
+// document.getElementById('plusSign').addEventListener("click", function(){
+//     savedOperator = '+' ;
+// });
+// console.log(parsedSavedFirstNumber + savedOperator + parsedSavedSecondNumber);
+// console.log(savedFirstNumber + savedOperator + savedSecondNumber);
+// console.log(savedOperator);
 
 // 1. press 1 button
 //  2. show 1 in display
