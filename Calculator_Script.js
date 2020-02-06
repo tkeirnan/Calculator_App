@@ -1,10 +1,29 @@
 
 let savedFirstNumber;
+const display = document.getElementById("calculatorDisplay");
 
-document.getElementById("one").addEventListener("click", function(){
-     document.getElementById("calculatorDisplay").innerText = document.getElementById("one").value;
+
+savedFirstNumber = display
+
+document.getElementsByClassName('key--number').addEventListener("click", function(){
+     display = document.getElementsByClassName('key--number')
 });
 
+console.log(savedFirstNumber);
+display.innerText = savedFirstNumber;
+console.log(display);
+
+
+// document.getElementById("one").addEventListener("click", function(){
+//      document.getElementById("calculatorDisplay").innerText = document.getElementById("one").value;
+// });
+
+// document.getElementById("two").addEventListener("click", function(){
+//      document.getElementById("calculatorDisplay").innerText = document.getElementById("two").value;
+// });
+// document.getElementsByClassName("key--number").addEventListener("click", function(){
+//      document.getElementById("calculatorDisplay").innerText = document.getElementsByClassName("key--number").value;
+// });
 
 
 // TEST CASE 1
