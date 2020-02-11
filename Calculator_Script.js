@@ -12,12 +12,13 @@ for(let key of keys) {
           { savedFirstNumber = "0.";
                } else
                { if ( savedFirstNumber > 0)
-               { +savedFirstNumber
+               { savedFirstNumber = (parseInt(savedFirstNumber, 10)) 
+               console.log(parseInt(savedFirstNumber, 10));
           };  };
           
      });
 }
-console.log(display);
+
 
 // if (button was a decimal) keep 0 and add decimal
 // else delete 0 and put first number
