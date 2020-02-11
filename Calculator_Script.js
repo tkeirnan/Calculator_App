@@ -1,17 +1,46 @@
+let savedFirstNumber = 0;
+const display = document.getElementById('calculatorDisplay');
 
-let savedFirstNumber;
-const display = document.getElementById("calculatorDisplay");
+const keys = document.getElementsByClassName('key--number');
 
-
-savedFirstNumber = display
-
-document.getElementsByClassName('key--number').addEventListener("click", function(){
-     display = document.getElementsByClassName('key--number')
-});
-
-console.log(savedFirstNumber);
-display.innerText = savedFirstNumber;
+for(let key of keys) {
+     key.addEventListener("click", function(){
+          savedFirstNumber += key.value;
+          display.innerText = savedFirstNumber;
+          console.log(display);
+          if (savedFirstNumber == document.getElementById("dot"))
+          { savedFirstNumber = "0.";
+               } else
+               { if ( savedFirstNumber > 0)
+               { +savedFirstNumber
+          };  };
+          
+     });
+}
 console.log(display);
+
+// if (button was a decimal) keep 0 and add decimal
+// else delete 0 and put first number
+
+//  You will have to grab the key className and assign it to something like 'operator', instead of 'keys' like we did.  
+// Then loop through and add an event listener as well.
+
+
+
+
+// let savedFirstNumber;
+// const display = document.getElementById("calculatorDisplay");
+
+
+// savedFirstNumber = display;
+
+// document.getElementsByClassName('key--number').addEventListener("click", function(){
+//      display = document.getElementsByClassName('key--number')
+// });
+
+// console.log(savedFirstNumber);
+// display.innerText = savedFirstNumber;
+// console.log(display);
 
 
 // document.getElementById("one").addEventListener("click", function(){
