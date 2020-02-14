@@ -1,22 +1,19 @@
 let savedFirstNumber = 0;
-const display = document.getElementById('calculatorDisplay');
+let display = document.getElementById('calculatorDisplay');
 
 const keys = document.getElementsByClassName('key--number');
 
 for(let key of keys) {
      key.addEventListener("click", function(){
-          savedFirstNumber += key.value;
-          display.innerText = savedFirstNumber;
-          console.log(display);
-          if (savedFirstNumber == document.getElementById("dot"))
-          { savedFirstNumber = "0.";
+          if (savedFirstNumber == 0){ 
+               savedFirstNumber = key.value;
+               display.innerText = savedFirstNumber;
+               console.log(display);
                } else
-               { if ( savedFirstNumber > 0)
-               { savedFirstNumber = (parseInt(savedFirstNumber, 10)) 
-               console.log(parseInt(savedFirstNumber, 10));
-          };  };
-          
-     });
+               { savedFirstNumber += key.value;
+               display.innerText = savedFirstNumber;
+          };
+     })
 }
 
 
