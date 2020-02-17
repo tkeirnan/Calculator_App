@@ -1,20 +1,44 @@
 let savedFirstNumber = 0;
-let display = document.getElementById('calculatorDisplay');
-
+let x = 0;
 const keys = document.getElementsByClassName('key--number');
 
 for(let key of keys) {
      key.addEventListener("click", function(){
           if (savedFirstNumber == 0){ 
                savedFirstNumber = key.value;
-               display.innerText = savedFirstNumber;
-               console.log(display);
+               screen.innerText = savedFirstNumber;
+               console.log(screen);
                } else
                { savedFirstNumber += key.value;
-               display.innerText = savedFirstNumber;
+               screen.innerText = savedFirstNumber;
           };
      })
 }
+
+let screen = document.getElementById('calculatorScreen');
+document.getElementsByClassName("key--operator").addEventListener("click", function(){
+     x=screen.innerText;
+});
+
+console.log(x);
+
+
+
+// 1.) Click on the number 1 button
+// EXPECTATION: Show 1 in the display
+// ACTUAL: ???
+// 2.) Click on the number 2 button
+// EXPECTATION: Show 12 in the display
+// ACTUAL: 12
+// 3.) Click on the plus button
+// EXPECTATION: Save number from display in variable.
+// ACTUAL:12 
+// 4.) Click on the number 3 button
+// EXPECTATION: Show 3 in the display
+// and a plus sign in a variable. (Still showing 12 in the display)
+// ACTUAL: 12
+// 4.) Save Display number and plus sign in a variable.
+
 
 
 // if (button was a decimal) keep 0 and add decimal
