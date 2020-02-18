@@ -1,6 +1,9 @@
+let screen = document.getElementById('calculatorScreen');
 let savedFirstNumber = 0;
+let savedSecondNumber = 0;
 let x = 0;
 const keys = document.getElementsByClassName('key--number');
+const operators = document.getElementsByClassName('key--operators');
 
 for(let key of keys) {
      key.addEventListener("click", function(){
@@ -11,16 +14,19 @@ for(let key of keys) {
                } else
                { savedFirstNumber += key.value;
                screen.innerText = savedFirstNumber;
+               console.log(savedFirstNumber)
           };
      })
 }
 
-let screen = document.getElementById('calculatorScreen');
-document.getElementsByClassName("key--operator").addEventListener("click", function(){
-     x=screen.innerText;
-});
-
-console.log(x);
+for(let operator of operators) {
+     operator.addEventListener("click", function(){
+          if (key.value == '+'){
+               x = savedFirstNumber + savedSecondNumber;
+               console.log(x)
+          };
+     })
+}
 
 
 
