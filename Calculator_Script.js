@@ -3,7 +3,7 @@ let savedFirstNumber = 0;
 let savedSecondNumber = 0;
 let x = 0;
 const keys = document.getElementsByClassName('key--number');
-const operators = document.getElementsByClassName('key--operators');
+const operators = document.getElementsByClassName('key--operator');
 
 for(let key of keys) {
      key.addEventListener("click", function(){
@@ -21,7 +21,7 @@ for(let key of keys) {
 
 for(let operator of operators) {
      operator.addEventListener("click", function(){
-          if (key.value == '+'){
+          if (operators.value == '+'){
                x = savedFirstNumber + savedSecondNumber;
                console.log(x)
           };
