@@ -48,6 +48,7 @@ for (let key of keys) {
                          console.log('this is the value of operation ' + operation);
                          y = parseInt(savedSecondNumber);
                          screen.innerText = (x + y);
+                         equals.addEventListener("click", screen.innerText = (x + y));
                          
                     }
                     if (operator.value == '-') {
@@ -60,7 +61,6 @@ for (let key of keys) {
                          operation = operator.value;
                          x = parseInt(savedFirstNumber);
                          y = parseInt(savedSecondNumber);
-                         equals.addEventListener("click", screen.innerText = (x / y));
                          screen.innerText = (x / y);   
                     }
                     if (operator.value == '*') {
@@ -69,12 +69,14 @@ for (let key of keys) {
                          y = parseInt(savedSecondNumber);
                          screen.innerText = (x * y);   
                     }
+
+                    if (operator.value == '=') {
+                         x = parseInt(savedFirstNumber);
+                         y = parseInt(savedSecondNumber);
+                         screen.innerText = (x+y);
+                    }
                });
           }
-
-          
-
-
 
      });
 }
