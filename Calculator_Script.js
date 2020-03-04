@@ -1,89 +1,159 @@
-let screen = document.getElementById('calculatorScreen');
-let equals = document.getElementById('equalSign');
-let savedFirstNumber = 0;
-let parsedSavedFirstNumber = parseInt(savedFirstNumber);
-let savedSecondNumber = 0;
-let parsedSavedSecondNumber = parseInt(savedSecondNumber);
-let operation = null;
-let x = 0;
 const keys = document.getElementsByClassName('key--number');
 const operators = document.getElementsByClassName('key--operator');
+const screen = document.getElementById('calculatorScreen');
+
+let firstNumber = null;
+let secondNumber = null;
+let operation = null;
 
 for (let key of keys) {
-     key.addEventListener("click", function () {
-          // if someone has pressed the plus button
-          if (operation !== null) {
-               // then set the second number
-               if (savedSecondNumber == 0) {
-                    savedSecondNumber = key.value;
-                    screen.innerText = savedSecondNumber;
-                    console.log('This is saved second number ' + savedSecondNumber);
-               } else {
-                    savedSecondNumber += key.value;
-                    screen.innerText = savedSecondNumber;
-                    console.log('This is saved second number ' + savedSecondNumber);
-               }     
-               
-          } else {
-               // otherwise (else)
-               // set the first number
-               if (savedFirstNumber == 0) {
-                    savedFirstNumber = key.value;
-                    screen.innerText = savedFirstNumber;
-                    console.log('This is saved first number ' + savedFirstNumber);
-               } else {
-                    savedFirstNumber += key.value;
-                    screen.innerText = savedFirstNumber;
-                    console.log('This is saved first number ' + savedFirstNumber);
-               }
-          }
-          
-          for (let operator of operators) {
-               operator.addEventListener("click", function () {
-                    if (operator.value == "+") {
-                         console.log('plus button operator ran!');
-                         x = parseInt(savedFirstNumber);
-                         console.log(x);
-                         operation = operator.value;
-                         console.log('this is the value of operation ' + operation);
-                         y = parseInt(savedSecondNumber);
-                         screen.innerText = (x + y);
-                         equals.addEventListener("click", screen.innerText = (x + y));
-                         
-                    }
-                    if (operator.value == '-') {
-                         operation = operator.value;
-                         x = parseInt(savedFirstNumber);
-                         y = parseInt(savedSecondNumber);
-                         screen.innerText = (x - y);   
-                    }
-                    if (operator.value == '/') {
-                         operation = operator.value;
-                         x = parseInt(savedFirstNumber);
-                         y = parseInt(savedSecondNumber);
-                         screen.innerText = (x / y);   
-                    }
-                    if (operator.value == '*') {
-                         operation = operator.value;
-                         x = parseInt(savedFirstNumber);
-                         y = parseInt(savedSecondNumber);
-                         screen.innerText = (x * y);   
-                    }
-
-                    if (operator.value == '=') {
-                         x = parseInt(savedFirstNumber);
-                         y = parseInt(savedSecondNumber);
-                         screen.innerText = (x+y);
-                    }
-               });
-          }
-
+     key.addEventListener("click", function (e) {
+          // console.log(e.target.value);
+          displayInput(e.target.value)
      });
+}
+
+for (let operator of operators) {
+     operator.addEventListener("click", function (e) {
+          evaluateOperation(e.target.value)
+          
+          // console.log(e.target.value);
+     });
+}
+
+// Example: Steps to perform 1 - 2 + 5 = 4
+// 1. press 1 key
+// 2. display 1
+// 3. press "-" key
+// 4. check if num1 value is null
+// 5. it is null, so set num1 to value of 1
+// 6. set operator to "-"
+// 7. press 2 key
+// 8. display 2
+// 9. press "+" key
+// 10. check if num1 value is null
+// 11. it is not null, set num2 to value of 2
+// 12. Perform calculation with num1, operator, and num2
+// 13. return result to display and to num1
+// 14. set operator to "+"
+// 15. press 5 key
+// 16. display 5
+// 17. press "=" key
+// 18. check if num1 value is null
+// 19. it is not null,  set num2 to value of 5
+// 20. Perform calculation with num1, operator, and num2
+// 21. return result to display and to num1
+// 22. set operator to null
+
+function displayInput(numberKeyValue) {
+     if (screen.innerText === "0") {
+          screen.innerText = numberKeyValue;
+     } else {
+          screen.innerText = screen.innerText + numberKeyValue;
+     }
+}
+
+function evaluateOperation(operator) {
+     // console.log(operator);
+     const number = screen.innerText;
+     if (firstNumber === null) {
+          firstNumber = number
+          operation = operator
+          screen.innerText = "";
+     }
+     if (secondNumber === null && operation !== null)
+     secondNumber = number;
+     // do calculation const result = calculationfunction()
+     // firstNumber = result
+     console.log("First Number: ", firstNumber, "Operation: ", operation)
+
+     //1. check if firstnumber is null
+     // 2. it is null, so set firstNumber to value of number
+     // 3. set operator to "-"
 }
 
 
 
+// let equals = document.getElementById('equalSign');
+// let savedFirstNumber = 0;
+// let parsedSavedFirstNumber = parseInt(savedFirstNumber);
+// let savedSecondNumber = 0;
+// let parsedSavedSecondNumber = parseInt(savedSecondNumber);
+// let operation = null;
+// let x = 0;
 
+
+// for (let key of keys) {
+//      key.addEventListener("click", function () {
+//           // if someone has pressed the plus button
+//           if (operation !== null) {
+//                // then set the second number
+//                if (savedSecondNumber == 0) {
+//                     savedSecondNumber = key.value;
+//                     screen.innerText = savedSecondNumber;
+//                     console.log('This is saved second number ' + savedSecondNumber);
+//                } else {
+//                     savedSecondNumber += key.value;
+//                     screen.innerText = savedSecondNumber;
+//                     console.log('This is saved second number ' + savedSecondNumber);
+//                }     
+               
+//           } else {
+//                // otherwise (else)
+//                // set the first number
+//                if (savedFirstNumber == 0) {
+//                     savedFirstNumber = key.value;
+//                     screen.innerText = savedFirstNumber;
+//                     console.log('This is saved first number ' + savedFirstNumber);
+//                } else {
+//                     savedFirstNumber += key.value;
+//                     screen.innerText = savedFirstNumber;
+//                     console.log('This is saved first number ' + savedFirstNumber);
+//                }
+//           }
+          
+//           for (let operator of operators) {
+//                operator.addEventListener("click", function () {
+//                     if (operator.value == "+") {
+//                          console.log('plus button operator ran!');
+//                          x = parseInt(savedFirstNumber);
+//                          console.log(x);
+//                          operation = operator.value;
+//                          console.log('this is the value of operation ' + operation);
+//                          y = parseInt(savedSecondNumber);
+//                          screen.innerText = (x + y);
+//                          equals.addEventListener("click", screen.innerText = (x + y));
+                         
+//                     }
+//                     if (operator.value == '-') {
+//                          operation = operator.value;
+//                          x = parseInt(savedFirstNumber);
+//                          y = parseInt(savedSecondNumber);
+//                          screen.innerText = (x - y);   
+//                     }
+//                     if (operator.value == '/') {
+//                          operation = operator.value;
+//                          x = parseInt(savedFirstNumber);
+//                          y = parseInt(savedSecondNumber);
+//                          screen.innerText = (x / y);   
+//                     }
+//                     if (operator.value == '*') {
+//                          operation = operator.value;
+//                          x = parseInt(savedFirstNumber);
+//                          y = parseInt(savedSecondNumber);
+//                          screen.innerText = (x * y);   
+//                     }
+
+//                     if (operator.value == '=') {
+//                          x = parseInt(savedFirstNumber);
+//                          y = parseInt(savedSecondNumber);
+//                          screen.innerText = (x+y);
+//                     }
+//                });
+//           }
+
+//      });
+// }
 
 
 // 1.) Click on the number 1 button
@@ -93,14 +163,14 @@ for (let key of keys) {
 // EXPECTATION: Show 12 in the screen
 // ACTUAL: 12
 // 3.) Click on the plus button
-// EXPECTATION: Save number from screen in variable.
+// EXPECTATION: 12
 // ACTUAL:12 
 // 4.) Click on the number 3 button
 // EXPECTATION: Show 3 in the screen
 // ACTUAL: 3
 // 5.) Click on the equals sign
-// EXPECTATION: Save number from screen as secondSavedNumber. Show 15 on the screen.
-// Actuatl: 3
+// EXPECTATION:  Show 15 on the screen.
+// Actuatl: 15
 
 
 
