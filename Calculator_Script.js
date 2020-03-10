@@ -16,9 +16,57 @@ for (let key of keys) {
 for (let operator of operators) {
      operator.addEventListener("click", function (e) {
           evaluateOperation(e.target.value)
-          
           // console.log(e.target.value);
      });
+}
+
+function displayInput(numberKeyValue) {
+     if (screen.innerText === "0") {
+          screen.innerText = numberKeyValue;
+          console.log(numberKeyValue);
+     } else {
+          screen.innerText = screen.innerText + numberKeyValue;
+          console.log("else plus", numberKeyValue);
+     }
+}
+
+function evaluateOperation(operator) {
+     // console.log(operator);
+     const number = screen.innerText;
+     if (firstNumber === null) {
+          firstNumber = number
+          operation = operator
+          screen.innerText = "";
+     }
+     if (secondNumber === null && operation !== null)
+     secondNumber = number;
+     // do calculation 
+     function calculationFunction(firstNumber, operator, secondNumber) {
+          if (operator === "+") {
+               result = firstNumber + secondNumber;
+          }
+          if (operator === "-"){
+               result = firstNumber - secondNumber;
+          }
+          if (operator === "*"){
+               result = firstNumber * secondNumber;
+          }
+          if (operator === "/"){
+               result = firstNumber / secondNumber;
+          }
+          if (operator === "="){
+               screen.innerText = result;
+               // firstNumber = result
+          }
+     }
+     const result = calculationFunction();
+     
+     console.log("First Number: ", firstNumber, "Operation: ", operation)
+     console.log(result);
+
+     //1. check if firstnumber is null
+     // 2. it is null, so set firstNumber to value of number
+     // 3. set operator to "-"
 }
 
 // Example: Steps to perform 1 - 2 + 5 = 4
@@ -44,35 +92,6 @@ for (let operator of operators) {
 // 20. Perform calculation with num1, operator, and num2
 // 21. return result to display and to num1
 // 22. set operator to null
-
-function displayInput(numberKeyValue) {
-     if (screen.innerText === "0") {
-          screen.innerText = numberKeyValue;
-     } else {
-          screen.innerText = screen.innerText + numberKeyValue;
-     }
-}
-
-function evaluateOperation(operator) {
-     // console.log(operator);
-     const number = screen.innerText;
-     if (firstNumber === null) {
-          firstNumber = number
-          operation = operator
-          screen.innerText = "";
-     }
-     if (secondNumber === null && operation !== null)
-     secondNumber = number;
-     // do calculation const result = calculationfunction()
-     // firstNumber = result
-     console.log("First Number: ", firstNumber, "Operation: ", operation)
-
-     //1. check if firstnumber is null
-     // 2. it is null, so set firstNumber to value of number
-     // 3. set operator to "-"
-}
-
-
 
 // let equals = document.getElementById('equalSign');
 // let savedFirstNumber = 0;
