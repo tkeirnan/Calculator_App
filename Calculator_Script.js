@@ -38,37 +38,34 @@ function evaluateOperation(operator) {
           operation = operator
           screen.innerText = "";
      }
-     if (secondNumber === null && operation !== null)
+     if (secondNumber === null && operation !== null) {
      secondNumber = number;
-     // do calculation 
-     function calculationFunction(firstNumber, operator, secondNumber) {
-          if (operator === "+") {
-               result = firstNumber + secondNumber;
-          }
-          if (operator === "-"){
-               result = firstNumber - secondNumber;
-          }
-          if (operator === "*"){
-               result = firstNumber * secondNumber;
-          }
-          if (operator === "/"){
-               result = firstNumber / secondNumber;
-          }
-          if (operator === "="){
-               screen.innerText = result;
-               // firstNumber = result
-          }
+     const result = calculationFunction(firstNumber, operator, secondNumber);
      }
-     const result = calculationFunction();
-     
      console.log("First Number: ", firstNumber, "Operation: ", operation)
-     console.log(result);
-
      //1. check if firstnumber is null
      // 2. it is null, so set firstNumber to value of number
      // 3. set operator to "-"
 }
-
+function calculationFunction(firstNumber, operator, secondNumber) {
+     if (operator === "+") {
+          return firstNumber + secondNumber;
+     }
+     if (operator === "-"){
+          return firstNumber - secondNumber;
+     }
+     if (operator === "*"){
+          return firstNumber * secondNumber;
+     }
+     if (operator === "/"){
+          return firstNumber / secondNumber;
+     }
+     if (operator === "="){
+          screen.innerText = result;
+          firstNumber = result;
+          console.log(result)
+     }
+}
 // Example: Steps to perform 1 - 2 + 5 = 4
 // 1. press 1 key
 // 2. display 1
