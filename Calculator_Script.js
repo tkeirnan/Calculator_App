@@ -5,6 +5,7 @@ const screen = document.getElementById('calculatorScreen');
 let firstNumber = null;
 let secondNumber = null;
 let operation = null;
+let result = 0;
 
 for (let key of keys) {
      key.addEventListener("click", function (e) {
@@ -23,10 +24,8 @@ for (let operator of operators) {
 function displayInput(numberKeyValue) {
      if (screen.innerText === "0") {
           screen.innerText = numberKeyValue;
-          console.log(numberKeyValue);
      } else {
           screen.innerText = screen.innerText + numberKeyValue;
-          console.log("else plus", numberKeyValue);
      }
 }
 
@@ -40,9 +39,11 @@ function evaluateOperation(operator) {
      }
      if (secondNumber === null && operation !== null) {
      secondNumber = number;
-     const result = calculationFunction(firstNumber, operator, secondNumber);
+     console.log("second number", number);
+     const result = calculationFunction();
      }
-     console.log("First Number: ", firstNumber, "Operation: ", operation)
+     console.log("First Number: ", firstNumber, "Operation: ", operation);
+     console.log(result);
      //1. check if firstnumber is null
      // 2. it is null, so set firstNumber to value of number
      // 3. set operator to "-"
