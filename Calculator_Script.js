@@ -36,32 +36,33 @@ function evaluateOperation(operator) {
           firstNumber = number
           operation = operator
           screen.innerText = "";
+     } else if (secondNumber === null && operation !== null) {
+          secondNumber = number;
+          console.log("second number", number);
+          result = calculationFunction(parseInt(firstNumber), operator, parseInt(secondNumber));
      }
-     if (secondNumber === null && operation !== null) {
-     secondNumber = number;
-     console.log("second number", number);
-     const result = calculationFunction();
-     }
-     console.log("First Number: ", firstNumber, "Operation: ", operation);
+     console.log("First Number: ", firstNumber, "Operation: ", operation, "Second Number: ", secondNumber);
      console.log(result);
+     screen.innerText = result;
      //1. check if firstnumber is null
      // 2. it is null, so set firstNumber to value of number
      // 3. set operator to "-"
 }
+
 function calculationFunction(firstNumber, operator, secondNumber) {
      if (operator === "+") {
           return firstNumber + secondNumber;
      }
-     if (operator === "-"){
+     if (operator === "-") {
           return firstNumber - secondNumber;
      }
-     if (operator === "*"){
+     if (operator === "*") {
           return firstNumber * secondNumber;
      }
-     if (operator === "/"){
+     if (operator === "/") {
           return firstNumber / secondNumber;
      }
-     if (operator === "="){
+     if (operator === "=") {
           screen.innerText = result;
           firstNumber = result;
           console.log(result)
@@ -114,7 +115,7 @@ function calculationFunction(firstNumber, operator, secondNumber) {
 //                     screen.innerText = savedSecondNumber;
 //                     console.log('This is saved second number ' + savedSecondNumber);
 //                }     
-               
+
 //           } else {
 //                // otherwise (else)
 //                // set the first number
@@ -128,7 +129,7 @@ function calculationFunction(firstNumber, operator, secondNumber) {
 //                     console.log('This is saved first number ' + savedFirstNumber);
 //                }
 //           }
-          
+
 //           for (let operator of operators) {
 //                operator.addEventListener("click", function () {
 //                     if (operator.value == "+") {
@@ -140,7 +141,7 @@ function calculationFunction(firstNumber, operator, secondNumber) {
 //                          y = parseInt(savedSecondNumber);
 //                          screen.innerText = (x + y);
 //                          equals.addEventListener("click", screen.innerText = (x + y));
-                         
+
 //                     }
 //                     if (operator.value == '-') {
 //                          operation = operator.value;
