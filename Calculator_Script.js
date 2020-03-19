@@ -40,6 +40,7 @@ function evaluateOperation(operator) {
           secondNumber = number;
           console.log("second number", number);
           result = calculationFunction(parseInt(firstNumber), operator, parseInt(secondNumber));
+          return result;
      }
      console.log("First Number: ", firstNumber, "Operation: ", operation, "Second Number: ", secondNumber);
      console.log(result);
@@ -61,11 +62,6 @@ function calculationFunction(firstNumber, operator, secondNumber) {
      }
      if (operator === "/") {
           return firstNumber / secondNumber;
-     }
-     if (operator === "=") {
-          screen.innerText = result;
-          firstNumber = result;
-          console.log(result)
      }
 }
 // Example: Steps to perform 1 - 2 + 5 = 4
