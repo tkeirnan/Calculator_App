@@ -5,10 +5,9 @@ let firstNumber = null;
 let secondNumber = null;
 let operation = null;
 let result = 0;
-
 document.querySelector('#equalSign').addEventListener('click', (e) => {
      console.log('equal button was clicked!');
-
+     debugger;
      const equalsResult = calculationFunction(firstNumber, operation, secondNumber);
      // display equals result on screen
      screen.innerText = equalsResult;
@@ -19,7 +18,6 @@ document.querySelector('#equalSign').addEventListener('click', (e) => {
      // clear operator to null
      operation = null;
 });
-
 for (let key of keys) {
      key.addEventListener("click", function (e) {
           // console.log(e.target.value);
@@ -32,14 +30,12 @@ for (let key of keys) {
           }
      });
 }
-
 for (let operator of operators) {
      operator.addEventListener("click", function (e) {
           const resultOfOperation = evaluateOperation(e.target.value)
           // console.log(e.target.value);
      });
 }
-
 function displayInput(numberKeyValue) {
      if (screen.innerText === "0") {
           screen.innerText = numberKeyValue;
@@ -47,7 +43,6 @@ function displayInput(numberKeyValue) {
           screen.innerText = screen.innerText + numberKeyValue;
      }
 }
-
 function evaluateOperation(operator) {
      // console.log(operator);
      operation = operator;
@@ -55,7 +50,6 @@ function evaluateOperation(operator) {
      // 2. it is null, so set firstNumber to value of number
      // 3. set operator to "-"
 }
-
 function calculationFunction(firstNumber, operator, secondNumber) {
                          //      1         "+"          2
      if (operator === "+") {
@@ -71,7 +65,6 @@ function calculationFunction(firstNumber, operator, secondNumber) {
           return firstNumber / secondNumber;
      }
 }
-
 // example
 const sum = calculationFunction(1, '+', 2);
 console.log(sum);
